@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="tutorial results">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Radek Warowny">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exercises.html">Ex Results</a></li>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+          </ul>
+          
+
+        <h1>What Can JavaScript Do?</h1>
+        <!-- Getting HTML Content -->
+        <div>
+            <h3>Getting HTML Content</h3>
+            <p id="demo">JavaScript can change HTML content.</p>
+            <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello Radek!"'>Click if you're Radek</button>
+            <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello Tina!"'>Click if you're Tina</button>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <!-- Changing HTML Attribute Values -->
+        <div>
+            <h3>Changing HTML Attribute Values</h3>
+            <button onclick="document.getElementById('myImage').src='lightbulb-on-off.gif'">Flick the light.</button>
+            <img id="myImage" src="lightbulb-on-off.gif" style="width:100px">
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Changing HTML Styles (CSS)-->
+        <div>
+            <h3>Changing HTML Styles</h3>
+            <p id="demo2">JavaScript can change the style of an HTML element.</p>
+            <button type="button" onclick="document.getElementById('demo2').style.fontSize='35px'">Click Me!</button>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Hiding and Showing HTML elements -->
+        <div>
+            <h3>Hiding and Showing HTML elements</h3>
+            <p id="demo3">JavaScripe can hide HTML elements.</p>
+            <button type="button" onclick="document.getElementById('demo3').style.display='none'">Click to Hide</button>
+            <button type="button" onclick="document.getElementById('demo3').style.display='block'">Click to Show</button>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Getting HTML Content -->
+        <div>
+            <h3>Getting HTML Content</h3>
+            <p id="demo4">Using external JS file to execute function commands.</p>
+            <button type="button" onclick="externalFunction()">Try it!</button>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+       
+
+        <!-- Using document.write() -->
+        <!-- data is not persisten and so 'doc.write()' should only be used for testing -->
+        <div>
+            <h3>Using document.write()</h3>
+            <p>Data is not persisten and so 'doc.write()' should only be used for testing. </p>
+            <script>
+                document.write("The result of document.write() : " + (5+6));
+            </script>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Using window.alert() -->
+        <!-- You can skip the kindow keyword -->
+        <div>
+            <h3>Using window.alert()</h3>
+            <p>You can skip the kindow keyword</p>
+            <p>Result of math calculation will appear in alert window</p>
+            <button type="button" onclick="window.alert(5+6)">Try it!</button>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Using console.log() -->
+        <!-- For debugging -->
+        <h3>Using console.log()</h3>
+        <p>For debugging</p>
+        <p>Open page inspector and click on Console tab.</p>
+        <script>
+            console.log("The result of (5+6) is: "+(5+6));
+        </script>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- JavaScript Print -->
+        <!-- To actually print the page using connected printer -->
+        <div>
+            <h3>JavaScript Print</h3>
+            <p>To actually print the page using connected printer</p>
+            <button onclick="window.print()">Print this page.</button>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- JavaScript Statements -->
+        <div>
+            <h3>JavaScript Statements</h3>
+            <p id="demo6"></p>
+            <button type="button" onclick="statementsFunction()">Show result</button>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+        <div>
+            <h3>Function 'return' keyword. </h3>
+            <p id="demo7"></p>
+            <button type="button" onclick="displayReturn()">Show return</button>
+        </div>
+
+        <script src="scripts.js"></script>
+    </body>
+</html>
