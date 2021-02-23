@@ -1,4 +1,5 @@
 /**
+ * 
  * Results of JavaScript exercises found on CodeWars.com
  *
  * @summary CodeWars JS katas results.
@@ -9,6 +10,7 @@
  */
 
 // Grasshoper - Summation
+
 var summation = function (num) {
 
     var total = 0;
@@ -17,11 +19,13 @@ var summation = function (num) {
         total += i; 
         
     }
+
     console.log()
     console.log("Grasshopper - Summation")
     console.log("Input: " + num);
     console.log("Answer: " + total)
     return total;
+
   }
 
 summation(3);
@@ -198,6 +202,64 @@ switcheroo('');
 
 // Chuck Norris II - One Punch
 // task required a one-liner
-function onePunch(items) {if (items.length < 1) {console.log('Broken!');return 'Broken!';}else {console.log(items.split(' ').sort().join(' ').replace(/[Aa]/g,'').replace(/[Ee]/g,''));return items.split(' ').sort().join(' ').replace(/[Aa]/g,'').replace(/[Ee]/g,'');}}
 
-onePunch('');
+function onePunch(items) {if (items == '' || Number.isInteger(items) || Array.isArray(items)) {console.log('Broken!');return 'Broken!';}else {console.log(items.split(' ').sort().join(' ').replace(/[Aa]/g,'').replace(/[Ee]/g,''));return items.split(' ').sort().join(' ').replace(/[Aa]/g,'').replace(/[Ee]/g,'');}}
+
+onePunch(['s','a']);
+
+// Odd or Even?
+function oddOrEven(array) {
+
+    var total = 0;
+    var result = '';
+
+    if (array.lenght < 1) {
+        result = 'even';
+    }
+    else {
+        for (i = 0; i < array.length; i++) {
+            total += array[i];
+        }
+    }
+
+    if (total % 2 == 0) {
+        result = 'even';
+    }
+    else {
+        result = 'odd';
+    }
+
+    console.log()
+    console.log("Odd or Even?");
+    console.log("Input: " + array);
+    console.log("Answer: " + result);
+
+    return result;
+    
+}
+
+oddOrEven([0,1,4]);
+
+// Chuck Norris VI - Shopping with Chuck
+function price(start, soil, age) {
+
+    var soil_o_meter = {'Barely used': 10, 'Seen a few high kicks': 25, 'Blood stained': 30, 'Heavily soiled': 50};
+    var percent = soil_o_meter[soil];
+   
+    var n_apr;
+    var result = start;
+    for (i = 0; i < age; i++) {
+        n_apr = start * (percent / 100);
+        start += n_apr;
+
+    }
+
+
+
+    console.log(start+result);
+
+
+
+}
+
+price(27.76, 'Seen a few high kicks', 15);
