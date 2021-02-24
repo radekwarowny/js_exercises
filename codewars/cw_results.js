@@ -10,7 +10,6 @@
  */
 
 // Grasshoper - Summation
-
 var summation = function (num) {
 
     var total = 0;
@@ -213,7 +212,7 @@ function oddOrEven(array) {
     var total = 0;
     var result = '';
 
-    if (array.lenght < 1) {
+    if (array.length < 1) {
         result = 'even';
     }
     else {
@@ -240,26 +239,65 @@ function oddOrEven(array) {
 
 oddOrEven([0,1,4]);
 
-// Chuck Norris VI - Shopping with Chuck
+/**
+ * Chuck Norris VI - Shopping with Chuck 
+ * Price takes 3 arguments and finds current price of pants.
+ * 
+ * @param {float} start - starting price of pants
+ * @param {string} soil - measure of how used the pants are
+ * @param {int} age - the age of the pants
+ */
+
 function price(start, soil, age) {
 
     var soil_o_meter = {'Barely used': 10, 'Seen a few high kicks': 25, 'Blood stained': 30, 'Heavily soiled': 50};
-    var percent = soil_o_meter[soil];
-   
-    var n_apr;
-    var result = start;
-    for (i = 0; i < age; i++) {
-        n_apr = start * (percent / 100);
-        start += n_apr;
 
+    if (soil in soil_o_meter == false) {
+        console.log('Chuck is bottomless!');
+        return 'Chuck is bottomless!';
     }
+    else if (typeof start !== 'number' && typeof soil !== 'string' && typeof age !== 'number') {
+        console.log('Chuck is bottomless!');
+        return 'Chuck is bottomless!';
+    }
+    else {
 
+        var percent = soil_o_meter[soil];
+        var n_apr;
+        var total = start; 
 
+        for (i = 0; i < age; i++) { // price appreciates over given time
+            n_apr = total * (percent / 100);
+            total += n_apr;
+        }
+        var result = parseFloat(total).toFixed(2);
 
-    console.log(start+result);
+        console.log("\nChuck Norris VI - Shopping with Chuck");
+        console.log(`Input: $${start}, '${soil}', ${age} years`);
+        console.log(`Answer: $${result}`);
 
+        return `$${result}`;
+    }
+}
 
+price(27.76, 'Barely used', 15);
+
+// Double Trouble
+function trouble(x, t) {
+
+    var n = 0;
+    while (n < x.length) {
+        for (var i = 0; i < x.length; i++){
+            if (x[i] + x[i+1] == t) {
+                console.log(x[i+1]);
+                delete x[i+1]; 
+            }
+        
+        }
+        n++;
+    }
+    console.log(x);
 
 }
 
-price(27.76, 'Seen a few high kicks', 15);
+trouble([4, 1, 1, 1, 4], 2);
